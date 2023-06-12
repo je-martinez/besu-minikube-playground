@@ -9,10 +9,10 @@ data:
   nodes-allowlist.yml: |-
     nodes-allowlist=[
 
-      "enode://c1979a8a48693db804316b5acebe35e11731e1fb1c9c21ff7268ab25db6f6e03390a429b83cf0ec0865a7205f2669ec1ace652a3def11e2e01571c74939cbe22@validator1-0.besu-validator1.besu.svc.cluster.local:30303",
-      "enode://e40129f02c9e29a02049668346d4777bb55809042746882b33b20a8b5a7310eb5f107a53f0aa3da766ee77f401557a79c0c328329ea48bf0996c6c9dff817f76@validator2-0.besu-validator2.besu.svc.cluster.local:30303",
-      "enode://a3e4af081a0ab853c959b9acd0596f818b91a9409b9d04c50af055072c929abfa340e14111dcfa76e049fdb16bb9198e722d5e7be3e8ef37562ea0d0ce1eda11@validator3-0.besu-validator3.besu.svc.cluster.local:30303",
-      "enode://8f4e444a73034236ab4244c7a572aa2c6198b9e0d483ef17bf4b751cac5c0370bc527a5b0c5d01aa3ef41704af838c74730aeecac0f0c22dc4c17b0a9f03ad76@validator4-0.besu-validator4.besu.svc.cluster.local:30303",
+      "enode://d0c58354704fb0afcfc266dd1b9e387a7464b1f1d03c935090825fed9f163002cbb19b333846243366ad14de001187e1f6033edd973ac1d438aa3cd3cd762dd8@validator1-0.besu-validator1.besu.svc.cluster.local:30303",
+      "enode://52fdfc64bced2ffcd2b7e20aa46b595c4f1b25e473cfde6f3faf2ae9b0ff620c21ed6f0e7e0b47e990951ec200e7d131ef89b4730626525cb1af018923d514d6@validator2-0.besu-validator2.besu.svc.cluster.local:30303",
+      "enode://63fa4653655b8517bf4ea2e8dec0f307b01d9fe3c2c49b5719b5666643630711756670879beba38a0668f1ebe54a09205246d77c83942f3eaa48e9f990513fc9@validator3-0.besu-validator3.besu.svc.cluster.local:30303",
+      "enode://4c05340e983c24f10b9d9909260ee45bd052c5cd995c3c9dbb72a7b0b0faab1acca898b20f77049be633ab31d6fc332b0bd07424b4b3c56f8d45bae879174498@validator4-0.besu-validator4.besu.svc.cluster.local:30303",
       "enode://98496800174b3c73ae33cba59f8f5e686cd488f7897c2edb52e2cf46383d75cd03dbb58dde07185bc0953f98800ca9a89f4b5ef450c5e51292ea08ec6130ee0c@member1-0.besu-member1.besu.svc.cluster.local:30303",
       "enode://ad2c79c6561bc8212c2e8382611c62e406e767d1f3106c68ca206900f575cb8ba9a8be111c645cd9803701d684454c782c40d2361b000a32ed03d26228b30ec1@member2-0.besu-member2.besu.svc.cluster.local:30303",
       "enode://af19c92deb635bd7720634de9b2e7908208530d6f5e96eee003a8f1799e5be4037957d7e2fdbe3605e3a38dab05c961679c02133a0e624e23a72f7961e8af6ac@member3-0.besu-member3.besu.svc.cluster.local:30303"

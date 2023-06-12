@@ -69,15 +69,15 @@ spec:
             - "curl -X GET --connect-timeout 30 --max-time 10 --retry 6 --retry-delay 0 --retry-max-time 300 ${BESU_VALIDATOR1_SERVICE_HOST}:8545/liveness"
       containers:
         - name: member1-tessera
-          image: quorumengineering/tessera:latest
+          image: quorumengineering/tessera:21.4.0
           imagePullPolicy: IfNotPresent
           resources:
             requests:
               cpu: 100m
-              memory: 1024Mi
+              memory: 256Mi
             limits:
               cpu: 500m
-              memory: 2048Mi
+              memory: 512Mi
           env:
             - name: POD_IP
               valueFrom:
@@ -93,6 +93,8 @@ spec:
             - name: key
               mountPath: /config/keys/
               readOnly: true
+            - name: data
+              mountPath: /data
           ports:
             - containerPort: 9000
               name: tessera
@@ -109,7 +111,7 @@ spec:
           args:
             - |
               exec
-              mkdir -p /data/tm/;
+              mkdir /data/tm/;
               cp /config/keys/tm.* /data/tm/ ;
 
                   cat <<EOF > /data/tm/tessera-config-09.json
@@ -173,7 +175,7 @@ spec:
               EOF
 
                   cat /data/tm/tessera-config-09.json
-                  /tessera/bin/tessera -configfile /data/tm/tessera-config-09.json
+                  java -Xms128M -Xmx128M -jar /tessera/tessera-app.jar -configfile /data/tm/tessera-config-09.json
 
         - name: member1-besu
           image: hyperledger/besu:21.1.2
@@ -181,10 +183,10 @@ spec:
           resources:
             requests:
               cpu: 100m
-              memory: 1024Mi
+              memory: 256Mi
             limits:
               cpu: 500m
-              memory: 2048Mi
+              memory: 512Mi
           env:
             - name: POD_IP
               valueFrom:
