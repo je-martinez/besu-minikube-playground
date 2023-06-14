@@ -1,0 +1,50 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: besu-configmap
+  labels:
+    app: besu-configmap
+  namespace: besu
+data:
+  validator1PubKey: "b1cd275d17109e0abfcfd6a2aca92b0ed51b2de54f9f8e6a21ba8634d8efc8627d4cd3871fbad937015ffcc85362dacb07a0c9698534bff5953e7647f89d5e2a"
+  validator2PubKey: "b2f4f82ddd35370be6e2d8675883746ebb98fda88e5f699773b605a838ae4595fdb0b18f5d2a579e531ebcf6b83c3016411dbe4a2b73729fea4e9bcee463e78a"
+  validator3PubKey: "6d21d4cd712a15510c9d29e890d15ab01f2b53f30c14344feeacff80482fbc4bab1eecbdd74d5357078eaf320a3fe461511f10cdcc6476e9ad7cf8772af2d141"
+  validator4PubKey: "4a4a91742d5250c6bf8939f2cfa5ca9fa902c490c36e6bce1e6ed75484844840aee51889c27fe8f519eccf011a691acf72ee6507d263a91daef62a6918f763d4"
+  nodesHttpCorsOrigins: "*"
+  nodesHostWhitelist: "*"
+  genesis.json: |-
+    {
+      "config" : {
+        "chainId" : 2018,
+        "constantinoplefixblock" : 0,
+        "ibft2" : {
+          "blockperiodseconds" : 2,
+          "epochlength" : 30000,
+          "requesttimeoutseconds" : 10
+        }
+      },
+      "nonce" : "0x0",
+      "timestamp" : "0x58ee40ba",
+      "gasLimit" : "0x47b760",
+      "difficulty" : "0x1",
+      "mixHash" : "0x63746963616c2062797a616e74696e65206661756c7420746f6c6572616e6365",
+      "coinbase" : "0x0000000000000000000000000000000000000000",
+      "alloc" : {
+        "fe3b557e8fb62b89f4916b721be55ceb828dbd73" : {
+          "privateKey" : "8f2a55949038a9610f50fb23b5883af3b4ecb3c3bb792cbcefbd1542c692be63",
+          "comment" : "private key and this comment are ignored.  In a real chain, the private key should NOT be stored",
+          "balance" : "0xad78ebc5ac6200000"
+        },
+        "627306090abaB3A6e1400e9345bC60c78a8BEf57" : {
+          "privateKey" : "c87509a1c067bbde78beb793e6fa76530b6382a4c0241e5e4a9ec0a0f44dc0d3",
+          "comment" : "private key and this comment are ignored.  In a real chain, the private key should NOT be stored",
+          "balance" : "90000000000000000000000"
+        },
+        "f17f52151EbEF6C7334FAD080c5704D77216b732" : {
+          "privateKey" : "ae6ae8e5ccbfb04590405997ee2d52d2b330726137b875053c36d94e974d162f",
+          "comment" : "private key and this comment are ignored.  In a real chain, the private key should NOT be stored",
+          "balance" : "90000000000000000000000"
+        }
+      },
+      "extraData" : "0xf87ea00000000000000000000000000000000000000000000000000000000000000000f85494cbe94d8d3231dfec0ef7bce3f211dad236fd8ad494bf423a3a4b411376f9d9ed75c4c59b7f6daac84394b825f9483c7011a9f24932330ace3e8093da457794027ac4be57a73ba4827ce8cddb2b5daf2f45e5c8808400000000c0"
+    }
