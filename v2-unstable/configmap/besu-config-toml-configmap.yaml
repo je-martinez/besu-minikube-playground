@@ -65,6 +65,6 @@ data:
     metrics-port=9545
 
     # Permissioning
-    permissions-nodes-config-file-enabled=true
-    permissions-nodes-config-file="/etc/permissions/nodes-allowlist.yml"
+    # permissions-nodes-config-file-enabled=true
+    # permissions-nodes-config-file="/etc/permissions/nodes-allowlist.yml"
 
