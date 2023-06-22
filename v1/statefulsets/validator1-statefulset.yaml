@@ -123,7 +123,7 @@ spec:
           args:
             - |
               exec /opt/besu/bin/besu \
-              --Xdns-enabled=true --Xdns-update-enabled=true \
+              --Xdns-enabled=true --Xdns-update-enabled=true --Xnat-kube-service-name=besu-validator1 \
               --genesis-file=/configs/genesis.json \
               --node-private-key-file=/secrets/key \
               --permissions-nodes-config-file-enabled=true \
