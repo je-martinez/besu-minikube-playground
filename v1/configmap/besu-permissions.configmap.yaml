@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: besu-permissions-configmap
+  labels:
+    app: besu-permissions-configmap
+  namespace: besu
+data:
+  nodes-allowlist.toml: |-
+    nodes-allowlist=[
+      "enode://b1cd275d17109e0abfcfd6a2aca92b0ed51b2de54f9f8e6a21ba8634d8efc8627d4cd3871fbad937015ffcc85362dacb07a0c9698534bff5953e7647f89d5e2a@validator1-0.besu-validator1.besu.svc.cluster.local:30303",
+      "enode://b2f4f82ddd35370be6e2d8675883746ebb98fda88e5f699773b605a838ae4595fdb0b18f5d2a579e531ebcf6b83c3016411dbe4a2b73729fea4e9bcee463e78a@validator2-0.besu-validator2.besu.svc.cluster.local:30303",
+      "enode://6d21d4cd712a15510c9d29e890d15ab01f2b53f30c14344feeacff80482fbc4bab1eecbdd74d5357078eaf320a3fe461511f10cdcc6476e9ad7cf8772af2d141@validator3-0.besu-validator3.besu.svc.cluster.local:30303",
+      "enode://4a4a91742d5250c6bf8939f2cfa5ca9fa902c490c36e6bce1e6ed75484844840aee51889c27fe8f519eccf011a691acf72ee6507d263a91daef62a6918f763d4@validator4-0.besu-validator4.besu.svc.cluster.local:30303"
+    ]

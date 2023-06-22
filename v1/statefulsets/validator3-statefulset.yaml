@@ -106,6 +106,8 @@ spec:
             - name: genesis-config
               mountPath: /configs
               readOnly: true
+            - name: node-permissions
+              mountPath: /permissions
           ports:
             - containerPort: 8545
               name: json-rpc
@@ -128,8 +130,11 @@ spec:
           args:
             - |
               exec /opt/besu/bin/besu \
+              --Xdns-enabled=true --Xdns-update-enabled=true \
               --genesis-file=/configs/genesis.json \
               --node-private-key-file=/secrets/key \
+              --permissions-nodes-config-file-enabled=true \
+              --permissions-nodes-config-file=/permissions/nodes-allowlist.toml \
               --rpc-http-enabled \
               --rpc-http-host=0.0.0.0 \
               --rpc-http-port=8545 \
@@ -146,7 +151,7 @@ spec:
               --metrics-host=0.0.0.0 \
               --metrics-port=9545 \
               --host-whitelist=${NODES_HOST_WHITELIST} \
-              --bootnodes=enode://${VALIDATOR1_PUBKEY}@${BESU_VALIDATOR1_SERVICE_HOST}:30303
+              --bootnodes=enode://${VALIDATOR1_PUBKEY}@besu-node.besu:30303
           livenessProbe:
             httpGet:
               path: /liveness
@@ -163,3 +168,9 @@ spec:
             items:
               - key: genesis.json
                 path: genesis.json
+        - name: node-permissions
+          configMap:
+            name: besu-permissions-configmap
+            items:
+              - key: nodes-allowlist.toml
+                path: nodes-allowlist.toml

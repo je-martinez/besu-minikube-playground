@@ -85,6 +85,7 @@ spec:
           args:
             - |
               exec /opt/besu/bin/besu \
+              --Xdns-enabled=true --Xdns-update-enabled=true \
               --genesis-file=/configs/genesis.json \
               --rpc-http-enabled \
               --rpc-http-host=0.0.0.0 \
@@ -102,7 +103,7 @@ spec:
               --metrics-host=0.0.0.0 \
               --metrics-port=9545 \
               --host-whitelist=${NODES_HOST_WHITELIST} \
-              --bootnodes=enode://${VALIDATOR1_PUBKEY}@${BESU_VALIDATOR1_SERVICE_HOST}:30303
+              --bootnodes=enode://${VALIDATOR1_PUBKEY}@besu-node.besu:30303
           livenessProbe:
             httpGet:
               path: /liveness
